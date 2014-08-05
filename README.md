@@ -20,7 +20,7 @@ This can take some time.
 
 Usage
 ===================
-The OpenStack webinterface can be accessed under: http:locahost/8080.
+The OpenStack webinterface can be accessed under: [http:locahost/8080].
 
   - Username admin or demo
   - Password nova
