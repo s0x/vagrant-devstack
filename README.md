@@ -22,10 +22,10 @@ Usage
 ===================
 The OpenStack webinterface can be accessed under: *http:locahost/8080*.
 
-  - Username admin or demo
-  - Password nova
+  - Username: admin or demo
+  - Password: nova
 
-You can access the CLI:
+You can access the CLI after the following steps:
 ``````````````sh
 vagrant ssh
 cd devstack
