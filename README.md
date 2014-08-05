@@ -5,8 +5,8 @@ Vagrantfile for setting up devstack.
 
 Dependencies
 ==============
-Vagrant
-Virtualbox
+* Vagrant
+* Virtualbox
 
 
 Setup
@@ -21,8 +21,9 @@ This can take some time.
 Usage
 ===================
 The OpenStack webinterface can be accessed under: http:locahost/8080.
--Username admin or demo
--Password nova
+
+  - Username admin or demo
+  - Password nova
 
 You can access the CLI:
 ``````````````sh
