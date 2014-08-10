@@ -38,4 +38,6 @@ Examples:
 nova list
 #Get the list of glance images
 glance image-list
+#boot image
+nova boot --flavor 1 --image cirros
 ````````````
