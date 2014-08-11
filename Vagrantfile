@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url  = 'http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box'
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 5000, host: 5000
+  config.vm.network "forwarded_port", guest: 8774, host: 8774
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
@@ -40,6 +41,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       echo LOGDAYS=1 >> local.conf
       su vagrant -c "./stack.sh"
       #./exercises/docker.sh"
+
+      export OS_AUTH_URL=http://127.0.0.1:5000/
   SCRIPT
 
 
