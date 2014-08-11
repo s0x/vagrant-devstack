@@ -11,9 +11,7 @@
 
 *.summary
 
-stack.sh.log.2014-08-06-085924
-
-stack.sh.log.2014-08-05-173409
+stack.sh.log.*
 
 openstack_inventory.py
 
