@@ -40,9 +40,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       echo SCREEN_LOGDIR=/vagrant/logs/screen >> local.conf
       echo LOGDAYS=1 >> local.conf
       su vagrant -c "./stack.sh"
-      #./exercises/docker.sh"
+      
 
-      export OS_AUTH_URL=http://127.0.0.1:5000/
+      su vagrant -c "export OS_AUTH_URL=http://127.0.0.1:5000/"
   SCRIPT
 
 
