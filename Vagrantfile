@@ -38,4 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       su vagrant -c "./stack.sh"
   SCRIPT
 
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
 end
