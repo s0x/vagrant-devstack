@@ -20,22 +20,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-   config.vm.provision :shell, :inline => <<-SCRIPT    
-      apt-get update
-      apt-get -y install git socat curl wget
-      su vagrant -c "git clone https://github.com/openstack-dev/devstack.git"
-      cd devstack
-      su vagrant -c "touch local.conf"
-      echo "[[local|localrc]]" >> local.conf
-      echo DATABASE_PASSWORD=nova >> local.conf
-      echo RABBIT_PASSWORD=nova >> local.conf
-      echo SERVICE_TOKEN=nova >> local.conf
-      echo SERVICE_PASSWORD=nova >> local.conf
-      echo ADMIN_PASSWORD=nova >> local.conf
-      echo LOGFILE=/vagrant/stack.sh.log >> local.conf
-      echo SCREEN_LOGDIR=/vagrant/logs/screen >> local.conf
-      echo LOGDAYS=1 >> local.conf
-      su vagrant -c "./stack.sh"
+  config.vm.provision :shell, :inline => <<-SCRIPT    
+    apt-get update
+    apt-get -y install git socat curl wget
+    su vagrant -c "git clone https://github.com/openstack-dev/devstack.git"
+    cd devstack
+    su vagrant -c "touch local.conf"
+    echo "[[local|localrc]]" >> local.conf
+    echo DATABASE_PASSWORD=nova >> local.conf
+    echo RABBIT_PASSWORD=nova >> local.conf
+    echo SERVICE_TOKEN=nova >> local.conf
+    echo SERVICE_PASSWORD=nova >> local.conf
+    echo ADMIN_PASSWORD=nova >> local.conf
+    echo LOGFILE=/vagrant/stack.sh.log >> local.conf
+    echo SCREEN_LOGDIR=/vagrant/logs/screen >> local.conf
+    echo LOGDAYS=1 >> local.conf
+    su vagrant -c "./stack.sh"
   SCRIPT
 
 end
